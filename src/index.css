@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-forest: #183D35;
+    --color-ivory: #FAF8F2;
+    --color-sage: #B8C9B5;
+    --color-terracotta: #C98268;
+    --color-charcoal: #292C2A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF8F2;
+    color: #292C2A;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Editorial heading styling */
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom delicate scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #BDD2CB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #91B3A8;
+}
+
+/* Subtle editorial paper texture & styling utilities */
+.paper-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(24, 61, 53, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(24, 61, 53, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.paper-card:hover {
+  border-color: rgba(24, 61, 53, 0.16);
+  box-shadow: 0 12px 30px -4px rgba(24, 61, 53, 0.08);
+}
+
+.paper-card-warm {
+  background-color: #FDFCF9;
+  border: 1px solid rgba(184, 201, 181, 0.3);
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Subtle dotted grid background for academic sections */
+.academic-dot-pattern {
+  background-image: radial-gradient(rgba(24, 61, 53, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Print styling for lesson plans and evaluation forms */
+@media print {
+  nav, footer, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print-page-break {
+    page-break-before: always;
+  }
+}
